@@ -1,0 +1,189 @@
+			.background-image {
+								position: absolute;
+								top: 0;
+								left: 0;
+								width: 100%;
+								height: 100%;
+								background-image: url('crsecurity1.png');
+								background-size: cover;
+								z-index: -1;
+								filter: blur(5px);
+								transition: filter .5s ease;
+			}
+			
+			.background-image:hover {
+										filter: none;
+			}
+			
+			.slide {
+						filter: blur(3px);
+						transition: filter .5s ease;
+			}
+			
+			#slider:hover .slide {
+									filter: none;
+			}
+}
+			#slider {
+						margin: 0px auto;
+						width: 800px;
+						max-width: 100%;
+						text-align: center;
+			}
+			
+			#slider input[type = radio] {
+											display: none;
+			}
+			
+			#slider label {
+							cursor: pointer;
+							text-decoration: none;
+			}
+			
+			#slides {
+						padding: 10px;
+						border: 3px solid #ccc;
+						background: #fff;
+						position: relative;
+						z-index: 1;
+			}
+			
+			#overflow {
+						width: 100%;
+						overflow: hidden;
+			}
+			
+			#slide1:checked ~ #slides .inner {
+												margin-left: 0px;
+			}
+			
+			#slide2:checked ~ #slides .inner {
+												margin-left: -100%;
+			}
+			
+			#slide3:checked ~ #slides .inner {
+												margin-left: -200%;
+			}
+			
+			#slides .inner {
+								transition: margin-left 800ms cubic-bezier(0.770, 0.000, 0.175, 1.000);
+								width: 400%;
+								line-height: 0;
+								height: 300px;
+			}
+			
+			#slides .slide {
+								width: 25%;
+								float: left;
+								display: flex;
+								justify-content: center;
+								align-items: center;
+								height: 100%;
+								color: #fff;
+			}
+			
+			.slide-content {
+								padding: 10px;
+			}
+			
+			.slide-content .learn-more {
+											display: inline-block;
+											margin-top: 20px;
+			}
+			
+			.slide-content .learn-more a {
+											text-decoration: none;
+											color: #fff;
+											font-size: 23px;
+			}
+			
+			.slide-content .learn-more:hover a {
+													text-decoration: underline;
+													transition: .5s ease;
+			}
+			
+			#slides .slide_1 {
+								background: #0f80aa;
+			}
+			
+			#slides .slide_2 {
+								background: #0899ba;
+			}
+			
+			#slides .slide_3 {
+								background: #04a6c2;
+			}
+			
+			.slide-content {
+								padding: 10px;
+			}
+			
+			#controls {
+						margin: -180px 0px 0px 0px;
+						width: 100%;
+						height: 50px;
+						z-index: 3;
+						position: relative;
+			}
+			
+			#controls label {
+								transition: opacity 0.2s ease-out;
+								display: none;
+								width: 50px;
+								height: 50px;
+								opacity: .4;
+			}
+			
+			#controls label:hover {
+									opacity: 1;								
+			}
+			
+			#slide1:checked ~ #controls label:nth-child(2),
+			#slide2:checked ~ #controls label:nth-child(3),
+			#slide3:checked ~ #controls label:nth-child(1) {
+				background-image: url('chevron-right-regular-24.png') no-repeat;
+				float: right;
+				margin: 0px -50px 0px 0px;
+				display: block;
+			}
+
+			#slide1:checked ~ #controls label:nth-last-child(1),
+			#slide2:checked ~ #controls label:nth-last-child(3),
+			#slide3:checked ~ #controls label:nth-last-child(2) {
+				background-image: url('chevron-left-regular-24.png') no-repeat;
+				float: left;
+				margin: 0px 0px 0px -50px;
+				display: block;
+			}
+
+			
+			#bullets {
+						margin: 150px 0px 0px;
+						text-align: center;
+			}
+			
+			#bullets label {
+								display: inline-block;
+								width: 10px;
+								height: 10px;
+								border-radius: 100%;
+								background: #ccc;
+								margin: 0px 10px;
+			}
+			
+			#slide1:checked ~ #bullets label:nth-child(1),
+			#slide2:checked ~ #bullets label:nth-child(2),
+			#slide3:checked ~ #bullets label:nth-child(3) {
+																background: #444;
+			}
+			
+			@media screen and (max-width: 900px) {
+													#slide1:checked ~ #controls label:nth-child(2),
+													#slide2:checked ~ #controls label:nth-child(3),
+													#slide3:checked ~ #controls label:nth-child(1),
+													#slide1:checked ~ #controls label:nth-last-child(2),
+													#slide2:checked ~ #controls label:nth-last-child(3),
+													#slide3:checked ~ #controls label:nth-last-child(1) {
+																											margin: 0px;
+													}
+			}
